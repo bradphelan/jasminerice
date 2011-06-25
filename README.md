@@ -18,14 +18,22 @@ Now add a route to the end of your config.routes
 
   mount Jasminerice::Engine => "/jasmine" 
 
-Now place a specs under
+Create a single file called
+
+	specs/javascripts/spec.js.coffee
+
+with the following content
+
+	#=require_tree ./
+
+This pulls in all your
 
 	specs/javascripts/*_spec.js.coffee
 	specs/javascripts/*_spec.js
 	specs/javascripts/*_spec.js.erb
 	etc
 
-For example
+into jasmine. For example
 
 spec/javascripts/foo.js.coffe
 
