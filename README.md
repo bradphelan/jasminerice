@@ -67,7 +67,7 @@ Now start your server
 
 Goto 
 
-	http://localhost:3000/jasminerice
+	http://localhost:3000/jasmine
 
 and there are your specs.
 
