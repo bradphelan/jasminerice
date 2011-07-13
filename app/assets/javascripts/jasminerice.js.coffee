@@ -1,5 +1,6 @@
 #=require jasmine
 #=require jasmine-html
+#=require jasmine-jquery
 
 (->
   execJasmine = ->
