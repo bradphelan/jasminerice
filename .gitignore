@@ -16,3 +16,4 @@ Session.vim
 err.txt
 .sass-cache
 public/stylesheets/*.css
+.rvmrc
