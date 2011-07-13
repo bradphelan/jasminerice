@@ -8,4 +8,6 @@ Gem::Specification.new do |s|
   s.authors     = ["Brad Phelan"]
   s.version     = "0.0.3"
   s.platform    = Gem::Platform::RUBY
+
+  s.add_dependency('jasmine')
 end
