@@ -1,4 +1,4 @@
-Application::Application.routes.draw do
+Rails.application.routes.draw do
   get "spec/index",              :controller => :spec, :action => :index
   get "spec/fixtures/:filename", :controller => :spec, :action => :fixtures
 
