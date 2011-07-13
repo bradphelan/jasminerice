@@ -2,13 +2,14 @@
   <head>
     <title> Jasmine Spec Runner </title>
 
+    <%= javascript_include_tag "application" %>
+    <%# include source files here... %>
+
     <%= stylesheet_link_tag "jasmine" %>
     <%= javascript_include_tag "jasminerice", :debug => Rails.env.development? %>
     <%= javascript_include_tag "spec", :debug => Rails.env.development? %>
     <%= csrf_meta_tags %>
 
-    <%# include source files here... %>
-    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
