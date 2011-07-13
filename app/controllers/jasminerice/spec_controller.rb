@@ -1,10 +1,12 @@
 module Jasminerice
   class SpecController <  ApplicationController
+    layout false
+
     def index
-      render :layout => false
     end
+
     def fixtures
-      render "spec/fixtures/#{params[:filename]}"
+      render "spec/javascripts/fixtures/#{params[:filename]}"
     end
   end
 end

@@ -25,7 +25,9 @@ jasmine.getFixtures = function() {
 jasmine.Fixtures = function() {
   this.containerId = 'jasmine-fixtures';
   this.fixturesCache_ = {};
-  this.fixturesPath = 'spec/javascripts/fixtures';
+  // Changed in jasminerice to support the normal path
+  //this.fixturesPath = 'spec/javascripts/fixtures';
+  this.fixturesPath = 'jasmine/fixtures';
 };
 
 jasmine.Fixtures.prototype.set = function(html) {

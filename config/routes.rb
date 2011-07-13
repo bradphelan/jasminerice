@@ -1,6 +1,8 @@
-Rails.application.routes.draw do
-  get "spec/index",              :controller => :spec, :action => :index
-  get "spec/fixtures/:filename", :controller => :spec, :action => :fixtures
+Jasminerice::Engine.routes.draw do
+  resources :spec, :controller => 'spec', :only => [:index] do
+    get "fixtures/:filename", :action => :fixtures
+  end
+  match "fixtures/:filename", :to => "spec#fixtures#:filename"
 
   root :to => "spec#index"
 end
