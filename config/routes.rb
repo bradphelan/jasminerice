@@ -1,4 +1,4 @@
-Jasminerice::Engine.routes.draw do
+Application::Application.routes.draw do
   get "spec/index",              :controller => :spec, :action => :index
   get "spec/fixtures/:filename", :controller => :spec, :action => :fixtures
 
