@@ -14,9 +14,11 @@ your Gemfile so
 
 	gem "jasminerice"
 
-Now add a route to the end of your config.routes
+Now add a route to the end of your config.routes but only for development and test
 
-  mount Jasminerice::Engine => "/jasmine" 
+	if ["development", "test"].include? Rails.env
+		mount Jasminerice::Engine => "/jasmine" 
+	end
 
 Create a single file called
 
@@ -65,7 +67,7 @@ Now start your server
 
 Goto 
 
-	http://localhost:3000/jasminerice
+	http://localhost:3000/jasmine
 
 and there are your specs.
 
