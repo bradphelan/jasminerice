@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Full support for the Rails 3.1 asset pipeline when bdd'ing your coffeescript or javascript using jasmine"
   s.files       = `git ls-files`.split "\n"
   s.authors     = ["Brad Phelan"]
-  s.version     = "0.0.5"
+  s.version     = "0.0.6"
   s.platform    = Gem::Platform::RUBY
   s.add_dependency( 'haml' )
 end
