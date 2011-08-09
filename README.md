@@ -26,6 +26,7 @@ Create a single file called
 
 with the following content
 
+    #=require jquery
 	#=require_tree ./
 
 This pulls in all your
