@@ -56,18 +56,18 @@ jasmine.Fixtures.prototype.clearCache = function() {
 };
 
 jasmine.Fixtures.prototype.cleanUp = function() {
-  $('#' + this.containerId).remove();
+  jQuery('#' + this.containerId).remove();
 };
 
 jasmine.Fixtures.prototype.sandbox = function(attributes) {
   var attributesToSet = attributes || {};
-  return $('<div id="sandbox" />').attr(attributesToSet);
+  return jQuery('<div id="sandbox" />').attr(attributesToSet);
 };
 
 jasmine.Fixtures.prototype.createContainer_ = function(html) {
-  var container = $('<div id="' + this.containerId + '" />');
+  var container = jQuery('<div id="' + this.containerId + '" />');
   container.html(html);
-  $('body').append(container);
+  jQuery('body').append(container);
 };
 
 jasmine.Fixtures.prototype.getFixtureHtml_ = function(url) {  
@@ -80,7 +80,7 @@ jasmine.Fixtures.prototype.getFixtureHtml_ = function(url) {
 jasmine.Fixtures.prototype.loadFixtureIntoCache_ = function(relativeUrl) {
   var self = this;
   var url = this.fixturesPath.match('/$') ? this.fixturesPath + relativeUrl : this.fixturesPath + '/' + relativeUrl;
-  $.ajax({
+  jQuery.ajax({
     async: false, // must be synchronous to guarantee that no tests are run before fixture is loaded
     cache: false,
     dataType: 'html',
@@ -99,11 +99,11 @@ jasmine.Fixtures.prototype.proxyCallTo_ = function(methodName, passedArguments) 
 jasmine.JQuery = function() {};
 
 jasmine.JQuery.browserTagCaseIndependentHtml = function(html) {
-  return $('<div/>').append(html).html();
+  return jQuery('<div/>').append(html).html();
 };
 
 jasmine.JQuery.elementToString = function(element) {
-  return $('<div />').append(element.clone()).html();
+  return jQuery('<div />').append(element.clone()).html();
 };
 
 jasmine.JQuery.matchersClass = {};
@@ -119,7 +119,7 @@ jasmine.JQuery.matchersClass = {};
       var handler = function(e) {
         data.spiedEvents[[selector, eventName]] = e;
       };
-      $(selector).bind(eventName, handler);
+      jQuery(selector).bind(eventName, handler);
       data.handlers.push(handler);
     },
 
