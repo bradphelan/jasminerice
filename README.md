@@ -37,7 +37,7 @@ This pulls in all your
 
 into jasmine. For example
 
-spec/javascripts/foo.js.coffe
+spec/javascripts/foo.js.coffee
 
 	#= require foo
 	#= require bar
