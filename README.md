@@ -14,7 +14,7 @@ your Gemfile so
 
 	gem "jasminerice"
 
-Now add a route to the end of your config.routes but only for development and test
+Now add a route to the end of your config/routes.rb but only for development and test
 
 	if ["development", "test"].include? Rails.env
 		mount Jasminerice::Engine => "/jasmine" 
@@ -37,7 +37,7 @@ This pulls in all your
 
 into jasmine. For example
 
-spec/javascripts/foo.js.coffe
+spec/javascripts/foo.js.coffee
 
 	#= require foo
 	#= require bar
