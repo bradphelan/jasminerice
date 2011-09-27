@@ -71,6 +71,20 @@ Goto
 
 and there are your specs.
 
+---
+
+For including stylesheets in your specs, jasminerice uses a spec.css file. Create such a file next to the spec.js.coffee file:
+
+	spec/javascripts/spec.css
+  
+and in that file, use sprockets directives to include the right css files, e.g.
+
+	 /*
+	  *= require application
+	 */
+
+---
+
 Questions:
 
 	bradphelan@xtargets.com
