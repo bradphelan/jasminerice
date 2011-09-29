@@ -7,8 +7,13 @@
     jasmineEnv.execute()
   jasmineEnv = jasmine.getEnv()
   jasmineEnv.updateInterval = 1000
+
+  window.jsApiReporter = new jasmine.JsApiReporter()
   trivialReporter = new jasmine.TrivialReporter()
+  
   jasmineEnv.addReporter trivialReporter
+  jasmineEnv.addReporter jsApiReporter
+  
   jasmineEnv.specFilter = (spec) ->
     trivialReporter.specFilter spec
   
