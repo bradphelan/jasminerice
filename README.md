@@ -14,11 +14,9 @@ your Gemfile so
 
 	gem "jasminerice"
 
-Now add a route to the end of your config/routes.rb but only for development and test
-
-	if ["development", "test"].include? Rails.env
-		mount Jasminerice::Engine => "/jasmine" 
-	end
+The engine is automatically mounted into your application in the development
+and test environments.  If you'd like to change that behavior, you can
+override the array `Jasminerice.environments` in an initializer.
 
 Create a single file called
 
