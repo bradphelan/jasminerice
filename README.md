@@ -6,6 +6,11 @@ of the Rails 3.1 asset pipeline jasmine rice removes any excuse YOU have for
 not testing your out of control sprawl of coffeescript files.
 This project rocks and uses MIT-LICENSE.
 
+Headless Testing Via Guard-Jasmine
+----------------------------------
+
+See (guard-jasmine)[http://rubydoc.info/github/guard/guard-jasmine/master/frames] for details
+
 Setup For Rails 3.1
 -------------------
 
