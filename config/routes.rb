@@ -6,3 +6,9 @@ Jasminerice::Engine.routes.draw do
 
   root :to => "spec#index"
 end
+
+Rails.application.routes.draw do
+  if Jasminerice.environments.include? Rails.env
+    mount Jasminerice::Engine => "/jasmine"
+  end
+end
