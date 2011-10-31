@@ -1,5 +1,5 @@
 module Jasminerice
-  class SpecController <  ActionController::Base
+  class SpecController <  Jasminerice::ApplicationController
     layout false
 
     def index
