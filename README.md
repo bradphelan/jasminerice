@@ -17,6 +17,7 @@ Setup For Rails 3.1
 This is a gem specifically for Rails 3.1. Just include it in
 your Gemfile so
 
+	gem "haml" # Unless included elsewhere in your gemfile
 	gem "jasminerice"
 
 The engine is automatically mounted into your application in the development
