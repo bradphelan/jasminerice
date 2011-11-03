@@ -2,14 +2,14 @@ Jasminerice
 ===========
 
 Utilizing [Jasmine](http://pivotal.github.com/jasmine/) and taking full advantage
-of the Rails 3.1 asset pipeline jasmine rice removes any excuse YOU have for
-not testing your out of control sprawl of coffeescript files.
+of the Rails 3.1 asset pipeline. Jasminerice removes any excuse YOU have for
+not testing your out of control sprawl of CoffeeScript files.
 This project rocks and uses MIT-LICENSE.
 
 Headless Testing Via Guard-Jasmine
 ----------------------------------
 
-See [guard-jasmine](https://github.com/netzpirat/guard-jasmine) for details
+See [guard-jasmine](https://github.com/netzpirat/guard-jasmine) for details.
 
 Setup For Rails 3.1
 -------------------
@@ -20,7 +20,7 @@ your Gemfile so
 	gem "jasminerice"
 
 The engine is automatically mounted into your application in the development
-and test environments.  If you'd like to change that behavior, you can
+and test environments. If you'd like to change that behavior, you can
 override the array `Jasminerice.environments` in an initializer.
 
 Create a single file called
@@ -38,7 +38,7 @@ This pulls in all your
 	spec/javascripts/*_spec.js.erb
 	etc
 
-into jasmine. For example
+into Jasmine. For example
 
 spec/javascripts/foo.js.coffee
 
@@ -60,7 +60,7 @@ spec/javascripts/foo.js.coffee
 			expect(v.foo()).toEqual(false)
 
 
-The Rails 3.1 asset pipeline using sprockets and tilt
+The Rails 3.1 asset pipeline using Sprockets and Tilt
 ensure conversion. As well you can use the #require
 dependency mechanisms
 
@@ -76,7 +76,7 @@ and there are your specs.
 
 ---
 
-For including stylesheets in your specs, jasminerice uses a spec.css file. Create such a file next to the spec.js.coffee file:
+For including stylesheets in your specs, Jasminerice uses a spec.css file. Create such a file next to the spec.js.coffee file:
 
 	spec/javascripts/spec.css
   
