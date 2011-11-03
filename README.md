@@ -17,9 +17,11 @@ Installation
 This is a gem specifically for Rails 3.1. Just include it in
 your `Gemfile`:
 
-	group :development, :test
-	  gem "jasminerice"
-	end
+```ruby
+group :development, :test
+  gem "jasminerice"
+end
+```
 
 The engine is automatically mounted into your application in the development
 and test environments. If you'd like to change that behavior, you can
@@ -36,9 +38,11 @@ Create a file `spec/javascripts/spec.js.coffee` with the following content:
 
 This pulls in all your specs from the `javascripts` directory into Jasmine:
 
-	spec/javascripts/*_spec.js.coffee
-	spec/javascripts/*_spec.js
-	spec/javascripts/*_spec.js.erb
+```bash
+spec/javascripts/*_spec.js.coffee
+spec/javascripts/*_spec.js
+spec/javascripts/*_spec.js.erb
+```
 
 The Rails 3.1 asset pipeline using [Sprockets](https://github.com/sstephenson/sprockets)
 and [Tilt](https://github.com/rtomayko/tilt) ensure conversion.
@@ -46,27 +50,31 @@ and [Tilt](https://github.com/rtomayko/tilt) ensure conversion.
 As well you can use the `#require` dependency mechanisms in your specs to
 pull dependencies. Here's an example `spec/javascripts/foo.js.coffee`:
 
-	#= require foo
-	#= require bar
+```coffeescript
+#= require foo
+#= require bar
 
-	describe "Foo", ->
-		it "it is not bar", ->
-			v = new Foo()
-			expect(v.bar()).toEqual(false)
+describe "Foo", ->
+  it "it is not bar", ->
+    v = new Foo()
+    expect(v.bar()).toEqual(false)
 
-	describe "Bar", ->
-		it "it is not foo", ->
-			v = new Bar()
-			expect(v.foo()).toEqual(false)
+describe "Bar", ->
+  it "it is not foo", ->
+    v = new Bar()
+    expect(v.foo()).toEqual(false)
+```
 
 ### Stylesheets
 
 For including stylesheets in your specs, Jasminerice uses `spec/javascripts/spec.css`.
 Use Sprockets directives to include the right css files:
 
-	 /*
-	  *= require application
-	 */
+```css
+/*
+ *= require application
+ */
+```
 
 ### Fixtures
 
@@ -74,24 +82,32 @@ Jasminerice makes files located in the `spec/javascripts/fixtures` directory ava
 as fixture. For example, a file `spec/javascripts/fixtures/baz.html.haml` with the
 following content:
 
-	%h2 Test Fixture
-	%p Using fixtures
+```haml
+%h2 Test Fixture
+%p Using fixtures
+```
 
 is made available under the URL `/jasmine/fixtures/baz`. Since Jasminerice automatically
 makes a patched version of [jasmine-jquery](https://github.com/velesin/jasmine-jquery)
 available in your specs, you can load the `baz` fixture in your spec with:
 
-	loadFixtures 'baz'
+```coffeescript
+loadFixtures 'baz'
+```
 
 ### Start server
 
 Now start your server
 
-	rails s
+```bash
+rails s
+```
 
 Goto 
 
-	http://localhost:3000/jasmine
+```bash
+http://localhost:3000/jasmine
+```
 
 and there are your specs.
 
@@ -99,7 +115,3 @@ Author
 ------
 
 * Brad Phelan (bradphelan@xtargets.com)
-
-
-
-
