@@ -28,6 +28,8 @@ override the array `Jasminerice.environments` in an initializer.
 Usage
 -----
 
+### CoffeeScripts
+
 Create a file `spec/javascripts/spec.js.coffee` with the following content:
 
 	#=require_tree ./
@@ -57,6 +59,32 @@ pull dependencies. Here's an example `spec/javascripts/foo.js.coffee`:
 			v = new Bar()
 			expect(v.foo()).toEqual(false)
 
+### Stylesheets
+
+For including stylesheets in your specs, Jasminerice uses `spec/javascripts/spec.css`.
+Use Sprockets directives to include the right css files:
+
+	 /*
+	  *= require application
+	 */
+
+### Fixtures
+
+Jasminerice makes files located in the `spec/javascripts/fixtures` directory available
+as fixture. For example, a file `spec/javascripts/fixtures/baz.html.haml` with the
+following content:
+
+	%h2 Test Fixture
+	%p Using fixtures
+
+is made available under the URL `/jasmine/fixtures/baz`. Since Jasminerice automatically
+makes a patched version of [jasmine-jquery](https://github.com/velesin/jasmine-jquery)
+available in your specs, you can load the `baz` fixture in your spec with:
+
+	loadFixtures 'baz'
+
+### Start server
+
 Now start your server
 
 	rails s
@@ -67,16 +95,8 @@ Goto
 
 and there are your specs.
 
-### Stylesheets
-
-For including stylesheets in your specs, Jasminerice uses `spec/javascripts/spec.css`.
-Use Sprockets directives to include the right css files:
-
-	 /*
-	  *= require application
-	 */
-
-### Author
+Author
+------
 
 * Brad Phelan (bradphelan@xtargets.com)
 
