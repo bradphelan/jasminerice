@@ -4,65 +4,58 @@ Jasminerice
 Utilizing [Jasmine](http://pivotal.github.com/jasmine/) and taking full advantage
 of the Rails 3.1 asset pipeline. Jasminerice removes any excuse YOU have for
 not testing your out of control sprawl of CoffeeScript files.
-This project rocks and uses MIT-LICENSE.
+This project rocks and uses the MIT-LICENSE.
 
-Headless Testing Via Guard-Jasmine
-----------------------------------
+Headless Testing
+----------------
 
 See [guard-jasmine](https://github.com/netzpirat/guard-jasmine) for details.
 
-Setup For Rails 3.1
--------------------
+Installation
+------------
 
 This is a gem specifically for Rails 3.1. Just include it in
-your Gemfile so
+your `Gemfile`:
 
-	gem "jasminerice"
+	group :development, :test
+	  gem "jasminerice"
+	end
 
 The engine is automatically mounted into your application in the development
 and test environments. If you'd like to change that behavior, you can
 override the array `Jasminerice.environments` in an initializer.
 
-Create a single file called
+Usage
+-----
 
-	spec/javascripts/spec.js.coffee
-
-with the following content
+Create a file `spec/javascripts/spec.js.coffee` with the following content:
 
 	#=require_tree ./
 
-This pulls in all your
+This pulls in all your specs from the `javascripts` directory into Jasmine:
 
 	spec/javascripts/*_spec.js.coffee
 	spec/javascripts/*_spec.js
 	spec/javascripts/*_spec.js.erb
-	etc
 
-into Jasmine. For example
+The Rails 3.1 asset pipeline using [Sprockets](https://github.com/sstephenson/sprockets)
+and [Tilt](https://github.com/rtomayko/tilt) ensure conversion.
 
-spec/javascripts/foo.js.coffee
+As well you can use the `#require` dependency mechanisms in your specs to
+pull dependencies. Here's an example `spec/javascripts/foo.js.coffee`:
 
 	#= require foo
 	#= require bar
 
 	describe "Foo", ->
-
 		it "it is not bar", ->
 			v = new Foo()
-
 			expect(v.bar()).toEqual(false)
 
 	describe "Bar", ->
-
 		it "it is not foo", ->
 			v = new Bar()
-
 			expect(v.foo()).toEqual(false)
-
-
-The Rails 3.1 asset pipeline using Sprockets and Tilt
-ensure conversion. As well you can use the #require
-dependency mechanisms
 
 Now start your server
 
@@ -74,23 +67,18 @@ Goto
 
 and there are your specs.
 
----
+### Stylesheets
 
-For including stylesheets in your specs, Jasminerice uses a spec.css file. Create such a file next to the spec.js.coffee file:
-
-	spec/javascripts/spec.css
-  
-and in that file, use sprockets directives to include the right css files, e.g.
+For including stylesheets in your specs, Jasminerice uses `spec/javascripts/spec.css`.
+Use Sprockets directives to include the right css files:
 
 	 /*
 	  *= require application
 	 */
 
----
+### Author
 
-Questions:
-
-	bradphelan@xtargets.com
+* Brad Phelan (bradphelan@xtargets.com)
 
 
 
