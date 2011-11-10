@@ -18,7 +18,7 @@ This is a gem specifically for Rails 3.1. Just include it in
 your `Gemfile`:
 
 ```ruby
-group :development, :test
+group :development, :test do
   gem "jasminerice"
 end
 ```
