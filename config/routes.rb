@@ -8,7 +8,5 @@ Jasminerice::Engine.routes.draw do
 end
 
 Rails.application.routes.draw do
-  if Jasminerice.environments.include? Rails.env
-    mount Jasminerice::Engine => "/jasmine"
-  end
+  mount Jasminerice::Engine => "/jasmine"
 end
