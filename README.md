@@ -63,30 +63,7 @@ describe "Bar", ->
   it "it is not foo", ->
     v = new Bar()
     expect(v.foo()).toEqual(false)
-```
-
-### Compatibility with Require.js
-
-If you use [Require.js](http://requirejs.org/) in your project and need to load your 
-modules in your jasmine specs, there is an option to prevent jasminerice from automatically
-executing the test runner before the modules are defined. This enables you to start the 
-execution manually whenever you want in your `spec/javascripts/spec.js.coffee` file:
-
-    #= require your/specs/and/other/stuff
-    # at the end of this file add:
-    
-    jasmine.rice.autoExecute = false
-
-    define 'jasmine.waitsfor.requirejs', ->  
-    require ['jasmine.waitsfor.requirejs'], ->
-      jasmine.getEnv().execute()
-      
-The shown example defines a dummy module in require.js that is required immediately on the next
-line. This is a simple hack to wait until require.js has initialized all modules and start the
-jasmine runner after that.
-
-Of course you can use `jasmine.rice.autoExecute = false` also for all other cases where you need
-to control when your specs should be executed! 
+``` 
 
 ### Stylesheets
 
@@ -133,6 +110,29 @@ http://localhost:3000/jasmine
 ```
 
 and there are your specs.
+
+### Compatibility with Require.js
+
+If you use [Require.js](http://requirejs.org/) in your project and need to load your 
+modules in your jasmine specs, there is an option to prevent jasminerice from automatically
+executing the test runner before the modules are defined. This enables you to start the 
+execution manually whenever you want in your `spec/javascripts/spec.js.coffee` file:
+
+    #= require your/specs/and/other/stuff
+    # at the end of this file add:
+    
+    jasmine.rice.autoExecute = false
+
+    define 'jasmine.waitsfor.requirejs', ->  
+    require ['jasmine.waitsfor.requirejs'], ->
+      jasmine.getEnv().execute()
+      
+The shown example defines a dummy module in require.js that is required immediately on the next
+line. This is a simple hack to wait until require.js has initialized all modules and start the
+jasmine runner after that.
+
+Of course you can use `jasmine.rice.autoExecute = false` also for all other cases where you need
+to control when your specs should be executed!
 
 Author
 ------
