@@ -17,8 +17,12 @@
   jasmineEnv.specFilter = (spec) ->
     trivialReporter.specFilter spec
 
+  jasmine.rice = {}
+  jasmine.rice.autoExecute = true
+  
   currentWindowOnload = window.onload
   window.onload = ->
     currentWindowOnload()  if currentWindowOnload
-    execJasmine()
+    if jasmine.rice.autoExecute
+      execJasmine()
 )()
