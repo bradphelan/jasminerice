@@ -1,1 +1,1 @@
-Rails.application.config.assets.paths << File.join(Rails.root, "spec", "javascripts")
+Rails.application.config.assets.paths << Rails.root.join("spec", "javascripts") << Rails.root.join("spec", "stylesheets")
