@@ -80,7 +80,12 @@ jasmine.Fixtures.prototype.createContainer_ = function(html) {
   } else {
     container = '<div id="' + this.containerId + '">' + html + '</div>'
   }
-  jQuery('body').append(container);
+
+  if(jQuery('body').length == 0){
+    jQuery('html').append('<body>' + container + '</body>');
+  } else {
+    jQuery('body').append(container);
+  }
 };
 
 jasmine.Fixtures.prototype.getFixtureHtml_ = function(url) {
