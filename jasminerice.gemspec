@@ -9,5 +9,4 @@ Gem::Specification.new do |s|
   s.version     = "0.0.8"
   s.platform    = Gem::Platform::RUBY
   s.add_dependency( 'haml' )
-  s.add_dependency( 'coffee-rails' )
 end
