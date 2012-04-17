@@ -3,7 +3,6 @@ PATH
   specs:
     jasminerice (0.0.8)
       coffee-rails
-      haml
 
 GEM
   remote: http://rubygems.org/
@@ -52,7 +51,6 @@ GEM
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
-    haml (3.1.3)
     hike (1.2.1)
     i18n (0.6.0)
     json (1.6.1)
