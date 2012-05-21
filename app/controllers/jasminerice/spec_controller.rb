@@ -3,7 +3,6 @@ module Jasminerice
     begin
       include Jasminerice::HelperMethods
     rescue
-      puts "Declare your Jasminerice::HelperMethods (perhaps put inside lib/) to make helpers available to jasminerice fixtures"
     end
 
     layout false
