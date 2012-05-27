@@ -95,6 +95,9 @@ available in your specs, you can load the `baz` fixture in your spec with:
 loadFixtures 'baz'
 ```
 
+### Helper Methods
+You can declare Jasminerice::HelperMethods (perhaps put inside lib/) to make helpers available to jasminerice fixtures.
+
 ### Start server
 
 Now start your server
