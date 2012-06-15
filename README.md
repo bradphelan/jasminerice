@@ -48,7 +48,7 @@ The Rails 3.1 asset pipeline using [Sprockets](https://github.com/sstephenson/sp
 and [Tilt](https://github.com/rtomayko/tilt) ensure conversion.
 
 As well you can use the `#require` dependency mechanisms in your specs to
-pull dependencies. Here's an example `spec/javascripts/foo.js.coffee`:
+pull dependencies. Here's an example `spec/javascripts/foo_spec.js.coffee`:
 
 ```coffeescript
 #= require foo
