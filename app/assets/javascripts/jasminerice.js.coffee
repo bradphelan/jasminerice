@@ -1,6 +1,6 @@
 #=require jasmine
 #=require jasmine-html
-#=require jasmine-jquery-1.3.1
+#=require jasmine-jquery-1.3.2
 
 (->
   execJasmine = ->
@@ -16,6 +16,8 @@
 
   jasmineEnv.specFilter = (spec) ->
     trivialReporter.specFilter spec
+    
+  jasmine.getFixtures().fixturesPath = 'jasmine/fixtures'
 
   jasmine.rice = {}
   jasmine.rice.autoExecute = true
