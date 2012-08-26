@@ -7,6 +7,8 @@ Jasminerice::Engine.routes.draw do
   root :to => "spec#index"
 end
 
-Rails.application.routes.draw do
-  mount Jasminerice::Engine => "/jasmine"
+if Jasminerice.mount
+  Rails.application.routes.draw do
+    mount Jasminerice::Engine => "/jasmine"
+  end
 end
