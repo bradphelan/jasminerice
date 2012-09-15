@@ -36,6 +36,11 @@ Create a file `spec/javascripts/spec.js.coffee` with the following content:
 
 	#=require_tree ./
 
+In the case where you need access to all your application javascript assets then create the file `spec/javascripts/spec.js.coffee` with the following contents:
+
+	#=require_tree ./
+	#=require_tree ../../app/assets/javascripts
+
 This pulls in all your specs from the `javascripts` directory into Jasmine:
 
 ```bash
