@@ -27,6 +27,15 @@ The engine is automatically mounted into your application in the development
 and test environments. If you'd like to change that behavior, you can
 override the array `Jasminerice.environments` in an initializer.
 
+Optionally, you can run the installer
+
+```bash
+rails g jasminerice::install
+```
+
+This will add the required `spec.js.coffee` together with a sample spec and 
+fixture to help get you started.
+
 Usage
 -----
 
