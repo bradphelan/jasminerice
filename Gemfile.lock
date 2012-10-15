@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jasminerice (0.0.9)
+    jasminerice (0.0.10)
       coffee-rails
       haml
 
