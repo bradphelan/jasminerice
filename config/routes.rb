@@ -2,7 +2,7 @@ Jasminerice::Engine.routes.draw do
   resources :spec, :controller => 'spec', :only => [:index] do
     get "fixtures/*filename", :action => :fixtures
   end
-  match "fixtures/*filename", :to => "spec#fixtures"
+  get "fixtures/*filename", :to => "spec#fixtures", :via => :any
 
   root :to => "spec#index"
 end
