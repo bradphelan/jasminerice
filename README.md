@@ -25,7 +25,7 @@ end
 
 The engine is automatically mounted into your application in the development
 and test environments. If you'd like to change that behavior, you can
-override the array `Jasminerice.environments` in an initializer.
+change which groups the gem is included in via the gemfile.
 
 Optionally, you can run the installer
 
