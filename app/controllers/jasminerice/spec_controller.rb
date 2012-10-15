@@ -8,6 +8,7 @@ module Jasminerice
     layout false
 
     def index
+      @specenv = params[:environment].try(:concat, "_spec") || "spec"
     end
 
     def fixtures
