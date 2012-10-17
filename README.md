@@ -30,7 +30,7 @@ change which groups the gem is included in via the gemfile.
 Optionally, you can run the installer
 
 ```bash
-rails g jasminerice::install
+rails g jasminerice:install
 ```
 
 This will add the required `spec.js.coffee` together with a sample spec and 
