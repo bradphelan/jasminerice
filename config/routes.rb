@@ -3,8 +3,7 @@ Jasminerice::Engine.routes.draw do
     get "fixtures/*filename", :action => :fixtures
   end
   match "fixtures/*filename", :to => "spec#fixtures"
-
-  root :to => "spec#index"
+  match "/(:suite)", :to => "spec#index", defaults: { suite: false }
 end
 
 if Jasminerice.mount
