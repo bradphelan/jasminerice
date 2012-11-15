@@ -363,7 +363,7 @@ jasmine.JQuery.matchersClass = {}
     },
 
     toExist: function() {
-      return $(document).find(this.actual).length
+      return this.actual.size() > 0
     },
 
     toHaveAttr: function(attributeName, expectedAttributeValue) {
