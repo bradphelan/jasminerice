@@ -109,6 +109,12 @@ available in your specs, you can load the `baz` fixture in your spec with:
 loadFixtures 'baz'
 ```
 
+You can also load JSON fixtures, e.g. `spec/javascripts/fixtures/json/bar.json`
+
+```coffeescript
+getJSONFixture('bar')
+```
+
 ### Helper Methods
 You can declare Jasminerice::HelperMethods (perhaps put inside lib/) to make helpers available to jasminerice fixtures.
 
