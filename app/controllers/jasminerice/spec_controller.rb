@@ -1,9 +1,6 @@
 module Jasminerice
   class SpecController <  Jasminerice::ApplicationController
-    begin
-      include Jasminerice::HelperMethods
-    rescue
-    end
+    helper Jasminerice::HelperMethods rescue nil
 
     layout false
 
