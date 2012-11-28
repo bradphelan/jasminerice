@@ -36,6 +36,9 @@ rails g jasminerice:install
 This will add the required `spec.js.coffee` together with a sample spec and
 fixture to help get you started.
 
+It will also add a intializer `config/initializers/jasminerice.rb` which
+can be used for easy setup of Jasminerice's options
+
 Usage
 -----
 
