@@ -116,7 +116,27 @@ getJSONFixture('bar')
 ```
 
 ### Helper Methods
-You can declare Jasminerice::HelperMethods (perhaps put inside lib/) to make helpers available to jasminerice fixtures.
+You can declare Jasminerice::SpecHelper (perhaps put inside lib/) to make helpers available to jasminerice fixtures.
+
+So in your lib directory, create the helper, e.g. `lib/jasminerice/spec_helper.rb`
+
+```ruby
+module Jasminerice
+  module SpecHelper
+  
+    def print_a_test
+      "foo"
+    end
+  end
+end
+```
+
+Then you can use it in your fixtures, e.g. `spec/javascripts/fixtures/bar.html.haml`
+
+```haml
+%h1 Here is my helper
+= print_a_test
+``` 
 
 ### Start server
 
