@@ -18,6 +18,7 @@
     htmlReporter.specFilter spec
 
   jasmine.getFixtures().fixturesPath = 'jasmine/fixtures'
+  jasmine.getStyleFixtures().fixturesPath = 'jasmine/fixtures'
   jasmine.getJSONFixtures().fixturesPath = 'jasmine/fixtures/json'
 
   jasmine.rice = {}
