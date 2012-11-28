@@ -14,7 +14,7 @@ module Jasminerice
     end
 
     def fixtures
-      render "spec/javascripts/fixtures/#{params[:filename]}"
+      render "#{Jasminerice.fixture_path}/#{params[:filename]}"
     end
   end
 end
