@@ -43,12 +43,12 @@ Usage
 
 Create a file `spec/javascripts/spec.js.coffee` with the following content:
 
-  #=require_tree ./
+    #=require_tree ./
 
 In the case where you need access to all your application javascript assets then create the file `spec/javascripts/spec.js.coffee` with the following contents:
 
-  #=require_tree ./
-  #=require_tree ../../app/assets/javascripts
+    #=require_tree ./
+    #=require_tree ../../app/assets/javascripts
 
 This pulls in all your specs from the `javascripts` directory into Jasmine:
 
@@ -123,7 +123,7 @@ So in your lib directory, create the helper, e.g. `lib/jasminerice/spec_helper.r
 ```ruby
 module Jasminerice
   module SpecHelper
-  
+
     def print_a_test
       "foo"
     end
@@ -136,7 +136,7 @@ Then you can use it in your fixtures, e.g. `spec/javascripts/fixtures/bar.html.h
 ```haml
 %h1 Here is my helper
 = print_a_test
-``` 
+```
 
 ### Start server
 
