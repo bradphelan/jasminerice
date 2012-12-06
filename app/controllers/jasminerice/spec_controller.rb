@@ -1,7 +1,7 @@
 module Jasminerice
   class SpecController <  Jasminerice::ApplicationController
    warn "Using Jasminerice::HelperMethods is deprecated and will be removed in a future release,"\
-        "please use Jasminerice::SpecHelper to define your helpers in the future" if Jasminerice.defined?(HelperMethods)
+        "please use Jasminerice::SpecHelper to define your helpers in the future" if defined?(Jasminrice::HelperMethods)
 
    helper Jasminerice::HelperMethods rescue nil
    helper Jasminerice::SpecHelper rescue nil
