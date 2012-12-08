@@ -14,7 +14,7 @@ See [guard-jasmine](https://github.com/netzpirat/guard-jasmine) for details.
 Installation
 ------------
 
-This is a gem specifically for Rails 3.1. Just include it in
+This gem has been tested and run with Rails 3.1 and 3.2. Just include it in
 your `Gemfile`:
 
 ```ruby
