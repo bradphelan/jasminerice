@@ -1,5 +1,14 @@
+Development Notice
+------------------
+
+I ( Brad Phelan ) no longer actively develop this project but I will accept
+reasonable pull requests. This project is looking for a home :)
+
+
 Jasminerice
 ===========
+
+
 
 Utilizing [Jasmine](http://pivotal.github.com/jasmine/) and taking full advantage
 of the Rails 3.1 asset pipeline. Jasminerice removes any excuse YOU have for
