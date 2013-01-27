@@ -27,7 +27,4 @@ Dummy::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-
-  # Deprecation logging
-  config.active_support.deprecation = :log
 end
