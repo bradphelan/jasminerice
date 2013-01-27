@@ -1,5 +1,4 @@
 require "jasminerice/engine"
-require 'haml'
 
 module Jasminerice
   # Determine whether or not to mount the Jasminerice engine implicitly. True/False
