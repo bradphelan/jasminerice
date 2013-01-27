@@ -2,8 +2,8 @@ Jasminerice::Engine.routes.draw do
   resources :spec, :controller => 'spec', :only => [:index] do
     get "fixtures/*filename", :action => :fixtures
   end
-  get "fixtures/*filename", :to => "spec#fixtures"
-  get "/(:suite)", :to => "spec#index", defaults: { suite: nil }
+  match "fixtures/*filename", :to => "spec#fixtures", :via => :all
+  match "/(:suite)", :to => "spec#index", :via => :all
 end
 
 if Jasminerice.mount
