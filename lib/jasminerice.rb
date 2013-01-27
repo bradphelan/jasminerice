@@ -21,8 +21,8 @@ module Jasminerice
     isolate_namespace Jasminerice
 
     initializer :assets, :group => :all do |app|
-      app.config.assets.paths << Rails.root.join("spec", "javascripts")
-      app.config.assets.paths << Rails.root.join("spec", "stylesheets")
+      app.config.assets.paths << Rails.root.join("spec", "javascripts").to_s
+      app.config.assets.paths << Rails.root.join("spec", "stylesheets").to_s
     end
 
     config.after_initialize do |app|
