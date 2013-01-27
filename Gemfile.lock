@@ -76,6 +76,12 @@ GEM
       json (>= 1.4.6)
     gherkin (2.11.5-java)
       json (>= 1.4.6)
+    haml (3.1.7)
+    haml-rails (0.3.5)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (~> 3.1)
+      railties (>= 3.1, < 4.1)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (2.2.0)
@@ -170,6 +176,7 @@ DEPENDENCIES
   aruba
   capybara
   coffee-rails (~> 3.1.0)
+  haml-rails
   jasminerice!
   jquery-rails
   json
