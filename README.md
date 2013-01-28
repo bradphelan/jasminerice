@@ -8,9 +8,17 @@ This project rocks and uses the MIT-LICENSE.
 
 ## Development Notice
 
-Brad Phelan is no longer actively developing this project but accepts reasonable pull requests, so continue on with contributing.
+Brad Phelan is no longer actively developing this project but is accepting reasonable pull requests, so continue on with contributing.
 
 This project is looking for a home :)
+
+#### 2013/1/17:
+Brad ([bradphelan](https://github.com/bradphelan)) posted a notice saying that he wasn't actively maintaining the project and that it was looking for a home.
+
+#### 2013/1/27:
+I ([jejacks0n](https://github.com/jejacks0n)) offered to contribute to the project, and Brad granted me collaboration privileges. I added some specs and integration tests that will make contributing a little easier.
+
+We'll be managing pull requests and issues together, and if someone would like to take over and move it to a different home you should contact Brad directly.
 
 
 ## Headless Testing
