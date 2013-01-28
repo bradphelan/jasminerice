@@ -53,7 +53,7 @@ Create a file `spec/javascripts/spec.js.coffee` (or run the install generator), 
 
 In the case where you need access to all your application javascripts then you can use something like the following, which will pull in all the files from your application and all specs from the `javascripts` directory.
 
-```coffescript
+```coffeescript
 #= require_tree ./
 #= require_tree ../../app/assets/javascripts
 ```
@@ -98,13 +98,13 @@ spec/javascripts/fixtures/example_fixture.html.haml
 
 Since Jasminerice automatically makes a patched version of [jasmine-jquery](https://github.com/velesin/jasmine-jquery) available in your specs, you can load the example fixture in your spec with the following.
 
-```coffeescript
-loadFixtures 'example_fixture'
+```javascript
+loadFixtures('example_fixture')
 ```
 
 You can also load JSON fixtures, e.g. `spec/javascripts/fixtures/json/bar.json`
 
-```coffeescript
+```javascript
 getJSONFixture('bar')
 ```
 
@@ -142,7 +142,7 @@ rails s
 
 Browse to...
 
-```bash
+```
 http://localhost:3000/jasmine
 ```
 
@@ -169,8 +169,7 @@ If you use [Require.js](http://requirejs.org/) in your project and need to load 
 jasmine.rice.autoExecute = false
 
 define 'jasmine.waitsfor.requirejs', ->
-require ['jasmine.waitsfor.requirejs'], ->
-  jasmine.getEnv().execute()
+require ['jasmine.waitsfor.requirejs'], jasmine.getEnv().execute
 ```
 
 The shown example defines a dummy module in require.js that is required immediately on the next line. This is a simple hack to wait until require.js has initialized all modules and start the jasmine runner after that.
