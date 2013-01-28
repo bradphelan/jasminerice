@@ -10,5 +10,5 @@ Jasminerice.setup do |config|
   #config.mount_at = '/jasmine'
 
   # Specify a path where your fixutures can be found. Defaults to 'spec/javascripts/fixtures'
-  #config.fixture_path = 'spec/javascripts/fixtures'
+  config.fixture_path = 'spec/dummy/spec/javascripts/fixtures'
 end

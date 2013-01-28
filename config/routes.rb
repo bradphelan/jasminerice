@@ -5,9 +5,3 @@ Jasminerice::Engine.routes.draw do
   get "fixtures/*filename", :to => "spec#fixtures"
   get "/(:suite)", :to => "spec#index"
 end
-
-if Jasminerice.mount
-  Rails.application.routes.draw do
-    mount Jasminerice::Engine => Jasminerice.mount_at
-  end
-end
