@@ -1,30 +1,28 @@
-Development Notice
-------------------
-
-I ( Brad Phelan ) no longer actively develop this project but I will accept
-reasonable pull requests. This project is looking for a home :)
-
-
 Jasminerice
 ===========
 
+Utilizing [Jasmine](http://pivotal.github.com/jasmine/) and taking full advantage of the Rails 3.1 asset pipeline Jasminerice removes any excuse YOU have for not testing your out of control sprawl of CoffeeScript files.
 
-
-Utilizing [Jasmine](http://pivotal.github.com/jasmine/) and taking full advantage
-of the Rails 3.1 asset pipeline. Jasminerice removes any excuse YOU have for
-not testing your out of control sprawl of CoffeeScript files.
 This project rocks and uses the MIT-LICENSE.
 
-Headless Testing
-----------------
+
+## Development Notice
+
+Brad Phelan is no longer actively developing this project but accepts reasonable pull requests, so continue on with contributing.
+
+This project is looking for a home :)
+
+
+## Headless Testing
 
 See [guard-jasmine](https://github.com/netzpirat/guard-jasmine) for details.
 
-Installation
-------------
 
-This gem has been tested and run with Rails 3.1 and 3.2. Just include it in
-your `Gemfile`:
+## Installation
+
+This gem has been tested and run with Rails 3.1 and 3.2. It should also run on Rails 4.
+
+Just include it in your `Gemfile`:
 
 ```ruby
 group :development, :test do
@@ -32,49 +30,37 @@ group :development, :test do
 end
 ```
 
-The engine is automatically mounted into your application in the development
-and test environments. If you'd like to change that behavior, you can
-change which groups the gem is included in via the gemfile.
+The engine is automatically mounted into your application in the development and test environments. If you'd like to change that behavior, you can change which groups the gem is included in via the gemfile.
 
-Optionally, you can run the installer
+Optionally, you can run the installer.
 
 ```bash
 rails g jasminerice:install
 ```
 
-This will add the required `spec.js.coffee` together with a sample spec and
-fixture to help get you started.
+This will add the required `spec.js.coffee`, an example spec, and fixture to help get you started. It will also add a intializer `config/initializers/jasminerice.rb` which can be used for easy setup of Jasminerice's options.
 
-It will also add a intializer `config/initializers/jasminerice.rb` which
-can be used for easy setup of Jasminerice's options
 
-Usage
------
+## Usage
 
 ### CoffeeScripts
 
-Create a file `spec/javascripts/spec.js.coffee` with the following content:
+Create a file `spec/javascripts/spec.js.coffee` (or run the install generator), and add the following content.
 
-    #=require_tree ./
-
-In the case where you need access to all your application javascript assets then create the file `spec/javascripts/spec.js.coffee` with the following contents:
-
-    #=require_tree ./
-    #=require_tree ../../app/assets/javascripts
-
-This pulls in all your specs from the `javascripts` directory into Jasmine:
-
-```bash
-spec/javascripts/*_spec.js.coffee
-spec/javascripts/*_spec.js
-spec/javascripts/*_spec.js.erb
+```coffeescript
+#= require_tree ./
 ```
 
-The Rails 3.1 asset pipeline using [Sprockets](https://github.com/sstephenson/sprockets)
-and [Tilt](https://github.com/rtomayko/tilt) ensure conversion.
+In the case where you need access to all your application javascripts then you can use something like the following, which will pull in all the files from your application and all specs from the `javascripts` directory.
 
-As well you can use the `#require` dependency mechanisms in your specs to
-pull dependencies. Here's an example `spec/javascripts/foo_spec.js.coffee`:
+```coffescript
+#= require_tree ./
+#= require_tree ../../app/assets/javascripts
+```
+
+The Rails 3.1 asset pipeline using [Sprockets](https://github.com/sstephenson/sprockets) and [Tilt](https://github.com/rtomayko/tilt) ensure conversion to javascript.
+
+You can also use the `#= require` directive in your specs to pull in dependencies manually. Here's an example `spec/javascripts/example_spec.js.coffee`:
 
 ```coffeescript
 #= require foo
@@ -93,32 +79,27 @@ describe "Bar", ->
 
 ### Stylesheets
 
-For including stylesheets in your specs, Jasminerice uses `spec/javascripts/spec.css`.
-Use Sprockets directives to include the right css files:
+For including stylesheets in your specs, Jasminerice uses `spec/javascripts/spec.css`. You can use Sprockets directives to include css files here.
 
 ```css
-/*
- *= require application
+/*= require application
  */
 ```
 
 ### Fixtures
 
-Jasminerice makes files located in the `spec/javascripts/fixtures` directory available
-as fixture. For example, a file `spec/javascripts/fixtures/baz.html.haml` with the
-following content:
+Jasminerice makes files located in the `spec/javascripts/fixtures` directory available as fixture. For example, if you put a file named `example_fixture.html.haml` in that path it will be available at the `/jasmine/fixtures/example_fixture` URL.
 
+spec/javascripts/fixtures/example_fixture.html.haml
 ```haml
 %h2 Test Fixture
 %p Using fixtures
 ```
 
-is made available under the URL `/jasmine/fixtures/baz`. Since Jasminerice automatically
-makes a patched version of [jasmine-jquery](https://github.com/velesin/jasmine-jquery)
-available in your specs, you can load the `baz` fixture in your spec with:
+Since Jasminerice automatically makes a patched version of [jasmine-jquery](https://github.com/velesin/jasmine-jquery) available in your specs, you can load the example fixture in your spec with the following.
 
 ```coffeescript
-loadFixtures 'baz'
+loadFixtures 'example_fixture'
 ```
 
 You can also load JSON fixtures, e.g. `spec/javascripts/fixtures/json/bar.json`
@@ -128,6 +109,7 @@ getJSONFixture('bar')
 ```
 
 ### Helper Methods
+
 You can declare Jasminerice::SpecHelper (perhaps put inside lib/) to make helpers available to jasminerice fixtures.
 
 So in your lib directory, create the helper, e.g. `lib/jasminerice/spec_helper.rb`
@@ -135,7 +117,6 @@ So in your lib directory, create the helper, e.g. `lib/jasminerice/spec_helper.r
 ```ruby
 module Jasminerice
   module SpecHelper
-
     def print_a_test
       "foo"
     end
@@ -143,65 +124,60 @@ module Jasminerice
 end
 ```
 
-Then you can use it in your fixtures, e.g. `spec/javascripts/fixtures/bar.html.haml`
+Then you can use it in your fixtures.
 
+spec/javascripts/fixtures/example_fixture.html.haml
 ```haml
 %h1 Here is my helper
 = print_a_test
 ```
 
-### Start server
+### Running Specs
 
-Now start your server
+Start your server...
 
 ```bash
 rails s
 ```
 
-Goto
+Browse to...
 
 ```bash
 http://localhost:3000/jasmine
 ```
 
-and there are your specs.
+Watch your specs run.
 
 ### Asset debugging
 
-You can override your current environment's `config.assets.debug` configuration per request
-by adding `?debug=false` or `?debug=true` to the jasmine path, eg.
+You can override your current environment's `config.assets.debug` configuration per request by adding `?debug=false` or `?debug=true` to the jasmine path, eg.
 
-```bash
+```
 http://localhost:3000/jasmine?debug=false
 ```
 
-This will concatenate all your css and javascript into single file which can improve your
-suite's loading speed significantly.
+This will concatenate all your css and javascript into single file which can improve your suite's loading speed significantly.
 
 ### Compatibility with Require.js
 
-If you use [Require.js](http://requirejs.org/) in your project and need to load your
-modules in your jasmine specs, there is an option to prevent jasminerice from automatically
-executing the test runner before the modules are defined. This enables you to start the
-execution manually whenever you want in your `spec/javascripts/spec.js.coffee` file:
+If you use [Require.js](http://requirejs.org/) in your project and need to load your modules in your jasmine specs, there is an option to prevent jasminerice from automatically executing the test runner before the modules are defined. This enables you to start the execution manually whenever you want in your `spec/javascripts/spec.js.coffee` file:
 
-    #= require your/specs/and/other/stuff
-    # at the end of this file add:
+```coffeescript
+#= require your/specs/and/other/stuff
+# at the end of this file add:
 
-    jasmine.rice.autoExecute = false
+jasmine.rice.autoExecute = false
 
-    define 'jasmine.waitsfor.requirejs', ->
-    require ['jasmine.waitsfor.requirejs'], ->
-      jasmine.getEnv().execute()
+define 'jasmine.waitsfor.requirejs', ->
+require ['jasmine.waitsfor.requirejs'], ->
+  jasmine.getEnv().execute()
+```
 
-The shown example defines a dummy module in require.js that is required immediately on the next
-line. This is a simple hack to wait until require.js has initialized all modules and start the
-jasmine runner after that.
+The shown example defines a dummy module in require.js that is required immediately on the next line. This is a simple hack to wait until require.js has initialized all modules and start the jasmine runner after that.
 
-Of course you can use `jasmine.rice.autoExecute = false` also for all other cases where you need
-to control when your specs should be executed!
+Of course you can use `jasmine.rice.autoExecute = false` also for all other cases where you need to control when your specs should be executed!
 
-Author
-------
+
+## Author
 
 * Brad Phelan (bradphelan@xtargets.com)

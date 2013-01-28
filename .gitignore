@@ -1,7 +1,14 @@
-.bundle
-db/*.sqlite3
+.rspec
+.rvmrc
+.bundle/
 log/*.log
-tmp/
+pkg/
+tmp
+
+spec/dummy/log/*.log
+spec/dummy/tmp/
+spec/dummy/.sass-cache
+
 .*.sw*
 *.orig
 .swp
@@ -14,6 +21,3 @@ public/system
 *.*.gz
 Session.vim
 err.txt
-.sass-cache
-public/stylesheets/*.css
-.rvmrc
