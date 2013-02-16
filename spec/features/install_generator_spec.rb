@@ -1,12 +1,12 @@
 require "spec_helper"
 
-feature "Installing Jasminerice", aruba: true do
+feature "Installing Jasminerice", :aruba => true do
 
   before do
     unset_bundler_env_vars
     run_simple("bundle exec rails new testapp --skip-bundle")
     cd("testapp")
-    append_to_file("Gemfile", %{\ngem "jasminerice", path: "#{File.expand_path('../../../', __FILE__)}"\n})
+    append_to_file("Gemfile", %{\ngem "jasminerice", :path => "#{File.expand_path('../../../', __FILE__)}"\n})
     run_simple("bundle install --local")
   end
 
