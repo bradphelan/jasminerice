@@ -9,6 +9,6 @@ describe Jasminerice::SpecController do
 
     subject { @view_paths.map(&:original_path_set).flatten.map(&:to_s) }
 
-    it { should include Rails.root.to_s }
+    it { should include Rails.root.join(Jasminerice.fixture_path).to_s }
   end
 end
