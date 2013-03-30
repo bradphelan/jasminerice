@@ -6,7 +6,7 @@ module Jasminerice
     helper Jasminerice::HelperMethods rescue nil
     helper Jasminerice::SpecHelper rescue nil
 
-    before_filter { prepend_view_path Rails.root.to_s }
+    before_filter { prepend_view_path Rails.root.join(Jasminerice.fixture_path) }
 
     layout false
 
@@ -16,7 +16,7 @@ module Jasminerice
     end
 
     def fixtures
-      render "#{Jasminerice.fixture_path}/#{params[:filename]}"
+      render "./#{params[:filename]}"
     end
   end
 end

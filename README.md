@@ -85,6 +85,17 @@ describe "Bar", ->
     expect(v.foo()).toEqual(false)
 ```
 
+### Code Coverage
+
+Create a file `spec/javascript/spec_cover.js.coffee` or `spec/javascript/mysuite_spec_cover.js.coffee`
+and require the source file for which you want to measure the code coverage.
+
+Jasminerice depends on [blanket.js](http://blanketjs.org) for code coverage.
+
+Here's an example `spec/javascripts/example_blanket_spec_cover.js.coffee`.
+
+The results for this can be seen at http://localhost:3000/jasmine?suite=example_blanket.
+
 ### Stylesheets
 
 For including stylesheets in your specs, Jasminerice uses `spec/javascripts/spec.css`. You can use Sprockets directives to include css files here.

@@ -6,6 +6,10 @@
     <%= stylesheet_link_tag "spec", @asset_options.clone %>
     <%= javascript_include_tag "jasminerice" %>
     <%= javascript_include_tag @specsuite, @asset_options.clone %>
+    <% if source_to_cover = cover_with_blanket?(@specsuite) %>
+      <%= javascript_include_tag "blanket-1.0.2.min", "jasmine-blanket" %>
+      <%= javascript_include_tag source_to_cover, @asset_options.clone.merge("data-cover" => true) %>
+    <% end %>
     <%= csrf_meta_tags %>
   </head>
   <body></body>
