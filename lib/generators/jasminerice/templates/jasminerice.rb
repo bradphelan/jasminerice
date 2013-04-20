@@ -10,6 +10,9 @@ if defined?(Jasminerice) == 'constant'
     # you could access your tests at http://YOUR_SERVER_URL/jasmine
     #config.mount_at = '/jasmine'
 
+    # Specify paths with spec files to be included by the asset pipeline. Defaults to 'spec/javascripts' and 'spec/stylesheets'
+    #config.assets_paths = ["spec/javascripts", "spec/stylesheets"]
+
     # Specify a path where your fixutures can be found. Defaults to 'spec/javascripts/fixtures'
     #config.fixture_path = 'spec/javascripts/fixtures'
   end

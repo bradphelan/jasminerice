@@ -11,6 +11,12 @@ module Jasminerice
   mattr_accessor :fixture_path
   @@fixture_path = 'spec/javascripts/fixtures'
 
+  mattr_accessor :assets_paths
+  @@assets_paths = [
+    "spec/stylesheets",
+    "spec/javascripts"
+  ]
+
   # Default way to setup Jasminerice. Run rails generate jasminerice:install to create
   # a fresh initializer with all configuration values.
   def self.setup
@@ -21,8 +27,7 @@ module Jasminerice
     isolate_namespace Jasminerice
 
     initializer :assets, :group => :all do |app|
-      app.config.assets.paths << Rails.root.join("spec", "javascripts").to_s
-      app.config.assets.paths << Rails.root.join("spec", "stylesheets").to_s
+      app.config.assets.paths.concat(Jasminerice.assets_paths.collect{ |path| Rails.root.join(path).to_s })
     end
 
     config.after_initialize do |app|
