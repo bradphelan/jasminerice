@@ -7,6 +7,10 @@ module Jasminerice
   mattr_accessor :mount_at
   @@mount_at = '/jasmine'
 
+  # Specify the path for specs, defaults to 'spec'
+  mattr_accessor :spec_path
+  @@spec_path = 'spec'
+
   #Specify the path for fixutures, defaults to 'spec/javascripts/fixtures'
   mattr_accessor :fixture_path
   @@fixture_path = 'spec/javascripts/fixtures'
@@ -21,8 +25,8 @@ module Jasminerice
     isolate_namespace Jasminerice
 
     initializer :assets, :group => :all do |app|
-      app.config.assets.paths << Rails.root.join("spec", "javascripts").to_s
-      app.config.assets.paths << Rails.root.join("spec", "stylesheets").to_s
+      app.config.assets.paths << Rails.root.join(Jasminerice.spec_path, "javascripts").to_s
+      app.config.assets.paths << Rails.root.join(Jasminerice.spec_path, "stylesheets").to_s
     end
 
     config.after_initialize do |app|
