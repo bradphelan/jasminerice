@@ -5,6 +5,7 @@ describe Jasminerice do
   it "has configuration properties" do
     expect(Jasminerice.mount).to be(true)
     expect(Jasminerice.mount_at).to eql('/jasmine')
+    expect(Jasminerice.spec_path).to eql('spec')
     expect(Jasminerice.fixture_path).to eql('spec/dummy/spec/javascripts/fixtures')
   end
 
