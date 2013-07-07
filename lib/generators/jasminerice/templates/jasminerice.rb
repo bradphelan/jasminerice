@@ -10,6 +10,9 @@ if defined?(Jasminerice) == 'constant'
     # you could access your tests at http://YOUR_SERVER_URL/jasmine
     #config.mount_at = '/jasmine'
 
+    # Specify a path where your specs can be found. Defaults to 'spec'
+    #config.spec_path = 'spec'
+
     # Specify a path where your fixutures can be found. Defaults to 'spec/javascripts/fixtures'
     #config.fixture_path = 'spec/javascripts/fixtures'
   end
