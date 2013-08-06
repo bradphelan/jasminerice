@@ -1,7 +1,7 @@
 /*!
  Jasmine-jQuery: a set of jQuery helpers for Jasmine tests.
 
- Version 1.5.2
+ Version 1.5.8
 
  https://github.com/velesin/jasmine-jquery
 
@@ -43,7 +43,7 @@ var appendLoadFixtures = function() {
 }
 
 var setFixtures = function(html) {
-  jasmine.getFixtures().proxyCallTo_('set', arguments)
+  return jasmine.getFixtures().proxyCallTo_('set', arguments)
 }
 
 var appendSetFixtures = function() {
@@ -106,7 +106,7 @@ jasmine.Fixtures = function() {
 
 jasmine.Fixtures.prototype.set = function(html) {
   this.cleanUp()
-  this.createContainer_(html)
+  return this.createContainer_(html)
 }
 
 jasmine.Fixtures.prototype.appendSet= function(html) {
@@ -151,14 +151,11 @@ jasmine.Fixtures.prototype.sandbox = function(attributes) {
 }
 
 jasmine.Fixtures.prototype.createContainer_ = function(html) {
-  var container
-  if(html instanceof $) {
-    container = $('<div id="' + this.containerId + '" />')
-    container.html(html)
-  } else {
-    container = '<div id="' + this.containerId + '">' + html + '</div>'
-  }
+  var container = $('<div>')
+    .attr('id', this.containerId)
+    .html(html);
   $(document.body).append(container)
+  return container
 }
 
 jasmine.Fixtures.prototype.addToContainer_ = function(html){
@@ -478,6 +475,10 @@ jasmine.JQuery.matchersClass = {}
       return this.actual.find(selector).length
     },
 
+    toBeMatchedBy: function(selector) {
+      return this.actual.filter(selector).length
+    },
+
     toBeDisabled: function(selector){
       return this.actual.is(':disabled')
     },
@@ -513,7 +514,8 @@ jasmine.JQuery.matchersClass = {}
 
     // tests the existence of a specific event binding + handler
     toHandleWith: function(eventName, eventHandler) {
-      var stack = $._data(this.actual.get(0), "events")[eventName]
+      var normalizedEventName = eventName.split('.')[0];
+      var stack = $._data(this.actual.get(0), "events")[normalizedEventName]
       for (var i = 0; i < stack.length; i++) {
         if (stack[i].handler == eventHandler) return true
       }
@@ -649,6 +651,18 @@ beforeEach(function() {
       }
       return jasmine.JQuery.events.wasStopped(selector, eventName)
     }
+  })
+  jasmine.getEnv().addEqualityTester(function(a, b) {
+    if(a instanceof jQuery && b instanceof jQuery) {
+      if(a.size() != b.size()) {
+        return jasmine.undefined;
+      }
+      else if(a.is(b)) {
+        return true;
+      }
+    }
+    return jasmine.undefined;
+
   })
 })
 
