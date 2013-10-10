@@ -12,6 +12,6 @@ Jasminerice.setup do |config|
   # Specify a path where your specs can be found. Defaults to 'spec'
   #config.spec_path = 'spec'
 
-  # Specify a path where your fixutures can be found. Defaults to 'spec/javascripts/fixtures'
+  # Specify a path where your fixtures can be found. Defaults to 'spec/javascripts/fixtures'
   config.fixture_path = 'spec/dummy/spec/javascripts/fixtures'
 end
