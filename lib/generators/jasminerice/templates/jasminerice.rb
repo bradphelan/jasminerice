@@ -13,7 +13,7 @@ if defined?(Jasminerice) == 'constant'
     # Specify a path where your specs can be found. Defaults to 'spec'
     #config.spec_path = 'spec'
 
-    # Specify a path where your fixutures can be found. Defaults to 'spec/javascripts/fixtures'
+    # Specify a path where your fixtures can be found. Defaults to 'spec/javascripts/fixtures'
     #config.fixture_path = 'spec/javascripts/fixtures'
   end
 end

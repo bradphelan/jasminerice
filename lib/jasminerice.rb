@@ -11,7 +11,7 @@ module Jasminerice
   mattr_accessor :spec_path
   @@spec_path = 'spec'
 
-  #Specify the path for fixutures, defaults to 'spec/javascripts/fixtures'
+  #Specify the path for fixtures, defaults to 'spec/javascripts/fixtures'
   mattr_accessor :fixture_path
   @@fixture_path = 'spec/javascripts/fixtures'
 
