@@ -11,6 +11,8 @@ if ::Rails.version >= '3.1'
           copy_file 'example_spec.js.coffee', 'spec/javascripts/example_spec.js.coffee'
           copy_file 'spec.css', 'spec/javascripts/spec.css'
           copy_file 'example_fixture.html.haml', 'spec/javascripts/fixtures/example_fixture.html.haml'
+          copy_file 'bar.js.coffee', 'app/assets/javascripts'
+          copy_file 'foo.js.coffee', 'app/assets/javascripts'
         end
       end
     end
