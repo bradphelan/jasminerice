@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jasminerice (0.1.0)
+    jasminerice (2.0.0)
       coffee-rails
 
 GEM
