@@ -1,33 +1,11 @@
 #=require jasmine
 #=require jasmine-html
 #=require boot
+#=require jquery
 #=require jasmine-jquery.js
 
-(->
-  execJasmine = ->
-    jasmineEnv.execute()
-  jasmineEnv = jasmine.getEnv()
-  jasmineEnv.updateInterval = 1000
+# Override the fixture paths
+jasmine.getFixtures().fixturesPath = 'jasmine/fixtures'
+jasmine.getStyleFixtures().fixturesPath = 'jasmine/fixtures'
+jasmine.getJSONFixtures().fixturesPath = 'jasmine/fixtures/json'
 
-  window.jsApiReporter = new jasmine.JsApiReporter()
-  htmlReporter = new jasmine.HtmlReporter()
-
-  jasmineEnv.addReporter htmlReporter
-  jasmineEnv.addReporter jsApiReporter
-
-  jasmineEnv.specFilter = (spec) ->
-    htmlReporter.specFilter spec
-
-  jasmine.getFixtures().fixturesPath = 'jasmine/fixtures'
-  jasmine.getStyleFixtures().fixturesPath = 'jasmine/fixtures'
-  jasmine.getJSONFixtures().fixturesPath = 'jasmine/fixtures/json'
-
-  jasmine.rice = {}
-  jasmine.rice.autoExecute = true
-
-  currentWindowOnload = window.onload
-  window.onload = ->
-    currentWindowOnload()  if currentWindowOnload
-    if jasmine.rice.autoExecute
-      execJasmine()
-)()
