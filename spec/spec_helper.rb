@@ -3,7 +3,6 @@ ENV["RAILS_ROOT"] = File.expand_path("../dummy", __FILE__)
 require File.expand_path("../dummy/config/environment", __FILE__)
 
 require "rspec/rails"
-require "rspec/autorun"
 require "capybara/rails"
 require "aruba/api"
 require "aruba/reporting"
