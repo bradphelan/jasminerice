@@ -51,6 +51,17 @@ This will add the required `spec.js.coffee`, an example spec, and fixture to hel
 
 ## Usage
 
+### Jasmine version selection
+
+By default Jasminerice will use Jasmine 1.3.  To select Jasmine 2.0 simply add the follow line in `config/initializers/jasminerice.rb`:
+
+```ruby
+Jasminerice.setup do |config|
+    config.jasmine_version = '2_0'
+end
+```
+
+
 ### CoffeeScripts
 
 Create a file `spec/javascripts/spec.js.coffee` (or run the install generator), and add the following content.

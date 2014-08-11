@@ -16,7 +16,7 @@ gem 'jquery-rails'
 gem 'turn', :require => false, :group => :test
 
 group :development, :test do
-  gem 'rspec-rails', '~>3.0.0'
+  gem 'rspec-rails', '2.99.0'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'aruba'
