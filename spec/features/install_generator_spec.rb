@@ -1,6 +1,17 @@
 require "spec_helper"
 
 feature "Installing Jasminerice", :aruba => true do
+  let(:file_names) do
+    [
+      'config/initializers/jasminerice.rb',
+      'spec/javascripts/spec.js.coffee',
+      'spec/javascripts/example_spec.js.coffee',
+      'spec/javascripts/spec.css',
+      'spec/javascripts/fixtures/example_fixture.html.haml',
+      'app/assets/javascripts/foo.js.coffee',
+      'app/assets/javascripts/bar.js.coffee'
+    ]
+  end
 
   before do
     unset_bundler_env_vars
@@ -8,22 +19,13 @@ feature "Installing Jasminerice", :aruba => true do
     cd("testapp")
     append_to_file("Gemfile", %{\ngem "jasminerice", :path => "#{File.expand_path('../../../', __FILE__)}"\n})
     run_simple("bundle install --local")
+    run_simple('bundle exec rails generate jasminerice:install --trace')
   end
 
-  scenario "installs the expected files" do
-    run_simple("bundle exec rails generate jasminerice:install --trace")
-    expected = <<-OUTPUT
-      create  config/initializers/jasminerice.rb
-      create  spec/javascripts/spec.js.coffee
-      create  spec/javascripts/example_spec.js.coffee
-      create  spec/javascripts/spec.css
-      create  spec/javascripts/fixtures/example_fixture.html.haml
-    OUTPUT
-    assert_partial_output(expected, all_output)
-    check_file_presence(["config/initializers/jasminerice.rb"], true)
-    check_file_presence(["spec/javascripts/spec.js.coffee"], true)
-    check_file_presence(["spec/javascripts/example_spec.js.coffee"], true)
-    check_file_presence(["spec/javascripts/spec.css"], true)
-    check_file_presence(["spec/javascripts/fixtures/example_fixture.html.haml"], true)
+  context "when installing" do
+    it('will install the files') do
+      file_names.each { |name| check_file_presence([name], true) }
+      file_names.each { |name| expect(all_output).to include "create  #{name}" }
+    end
   end
 end
