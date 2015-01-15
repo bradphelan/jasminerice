@@ -34,7 +34,7 @@ Just include it in your `Gemfile`:
 
 ```ruby
 group :development, :test do
-  gem "jasminerice", :git => 'https://github.com/bradphelan/jasminerice.git'
+  gem "jasminerice", :git => 'https://github.com/michael-harrison/jasminerice.git'
 end
 ```
 
