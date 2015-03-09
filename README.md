@@ -34,7 +34,7 @@ Just include it in your `Gemfile`:
 
 ```ruby
 group :development, :test do
-  gem "jasminerice", :git => 'https://github.com/bradphelan/jasminerice.git'
+  gem "jasminerice", :git => 'https://github.com/michael-harrison/jasminerice.git'
 end
 ```
 
@@ -50,6 +50,17 @@ This will add the required `spec.js.coffee`, an example spec, and fixture to hel
 
 
 ## Usage
+
+### Jasmine version selection
+
+By default Jasminerice will use Jasmine 1.3.  To select Jasmine 2.0 simply add the follow line in `config/initializers/jasminerice.rb`:
+
+```ruby
+Jasminerice.setup do |config|
+    config.jasmine_version = '2_0'
+end
+```
+
 
 ### CoffeeScripts
 

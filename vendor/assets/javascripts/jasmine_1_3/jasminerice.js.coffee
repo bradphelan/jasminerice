@@ -1,6 +1,8 @@
-#=require jasmine
-#=require jasmine-html
-#=require jasmine-jquery-1.5.8
+#=require jasmine_1_3/jasmine
+#=require jasmine_1_3/jasmine-html
+#=require jasmine_1_3/jasmine-jquery
+
+console.log('running V1.3')
 
 (->
   execJasmine = ->

@@ -3,7 +3,7 @@ require "spec_helper"
 describe Jasminerice::Engine do
 
   it "is a class" do
-    Jasminerice::Engine.should be_a(Class)
+    expect(Jasminerice::Engine).to be_a Class
   end
 
   it "has been isolated with a name" do

@@ -21,3 +21,10 @@ public/system
 *.*.gz
 Session.vim
 err.txt
+
+# RubyMine project files
+.idea
+
+# Mac finder artifacts
+.DS_Store
+
