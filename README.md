@@ -1,7 +1,7 @@
 Jasminerice
 ===========
 
-Utilizing [Jasmine](http://pivotal.github.com/jasmine/) and taking full advantage of the Rails 3.1 asset pipeline Jasminerice removes any excuse YOU have for not testing your out of control sprawl of CoffeeScript files.
+Utilizing [Jasmine](https://jasmine.github.io/) and taking full advantage of the Rails 3.1 asset pipeline Jasminerice removes any excuse YOU have for not testing your out of control sprawl of CoffeeScript files.
 
 This project rocks and uses the MIT-LICENSE.
 
